@@ -72,30 +72,34 @@
 
             <div class="row">
               <div class="col-md-10 col-md-offset-1">
-                <form action="" class="reveal-content">
+                <form id="contact-form" class="reveal-content">
                   <div class="row">
                     <div class="col-md-7">
                       <div class="form-group">
                         <input
                           type="email"
+                          name="email"
                           class="form-control"
-                          id="email"
-                          placeholder="Email"
+                          placeholder="Your Email"
+                          required
                         />
                       </div>
                       <div class="form-group">
                         <input
                           type="text"
+                          name="subject"
                           class="form-control"
-                          id="subject"
                           placeholder="Subject"
+                          required
                         />
                       </div>
                       <div class="form-group">
                         <textarea
+                          name="message"
                           class="form-control"
                           rows="5"
                           placeholder="Enter your message"
+                          required
                         ></textarea>
                       </div>
                       <button type="submit" class="btn btn-default btn-lg">
@@ -114,7 +118,7 @@
                           <span class="fa-icon">
                             <i class="fa fa-at" aria-hidden="true"></i>
                           </span>
-                          robinroger74150@gmaiL.com
+                          robinroger74150@gmail.com
                         </li>
                         <li>
                           <span class="fa-icon">
@@ -123,12 +127,26 @@
                               aria-hidden="true"
                             ></i>
                           </span>
-                          15 rue des cygnes, 74940 Annecy, France
+                          Annecy, France
                         </li>
                       </ul>
+
+                      <div style="width: 100%; height: 300px">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          frameborder="0"
+                          scrolling="no"
+                          marginheight="0"
+                          marginwidth="0"
+                          src="https://www.openstreetmap.org/export/embed.html?bbox=6.0900%2C45.8890%2C6.1490%2C45.9250&amp;layer=mapnik&amp;marker=45.8992,6.1294"
+                        >
+                        </iframe>
+                      </div>
+
                       <h3>Follow me on social networks</h3>
                       <a
-                        href="www.linkedin.com/in/robin-roger-99905625a"
+                        href="https://www.linkedin.com/in/robin-roger-99905625a"
                         title=""
                         class="fa-icon"
                       >
@@ -169,6 +187,29 @@
       document.addEventListener("DOMContentLoaded", function (event) {
         navActivePage();
       });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("elAIbNJ0WIv1BvSfh"); // Replace with your EmailJS user ID
+      })();
+
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          emailjs.sendForm("service_28t51le", "template_z6kg5de", this).then(
+            function (response) {
+              alert("Email successfully sent!");
+              document.getElementById("contact-form").reset(); // Reset form after successful submission
+            },
+            function (error) {
+              alert("Failed to send email. Please try again.");
+            }
+          );
+        });
     </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 

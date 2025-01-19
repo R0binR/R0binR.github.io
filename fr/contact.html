@@ -53,7 +53,9 @@
               <li><a href="./index.html" title="">01 : Accueil</a></li>
               <li><a href="./works.html" title="">02 : Mes Projets</a></li>
               <li><a href="./about.html" title="">03 : À Propos</a></li>
-              <li><a href="./contact.html" title="">04 : Contact</a></li>
+              <li>
+                <a href="./contact.html" title=""><b>04 : Contact</b></a>
+              </li>
               <li><a href="./components.html" title="">05 : Mon CV</a></li>
               <li><a href="../contact.html" title="">EN</a></li>
             </ul>
@@ -72,30 +74,34 @@
 
             <div class="row">
               <div class="col-md-10 col-md-offset-1">
-                <form action="" class="reveal-content">
+                <form id="contact-form" class="reveal-content">
                   <div class="row">
                     <div class="col-md-7">
                       <div class="form-group">
                         <input
                           type="email"
+                          name="email"
                           class="form-control"
-                          id="email"
-                          placeholder="Email"
+                          placeholder="Votre email"
+                          required
                         />
                       </div>
                       <div class="form-group">
                         <input
                           type="text"
+                          name="subject"
                           class="form-control"
-                          id="subject"
                           placeholder="Sujet"
+                          required
                         />
                       </div>
                       <div class="form-group">
                         <textarea
+                          name="message"
                           class="form-control"
                           rows="5"
                           placeholder="Entrez votre message"
+                          required
                         ></textarea>
                       </div>
                       <button type="submit" class="btn btn-default btn-lg">
@@ -108,7 +114,7 @@
                           <span class="fa-icon">
                             <i class="fa fa-phone" aria-hidden="true"></i>
                           </span>
-                          +33 7 82 24 05 75
+                          + 33 7 82 24 05 75
                         </li>
                         <li>
                           <span class="fa-icon">
@@ -118,18 +124,29 @@
                         </li>
                         <li>
                           <span class="fa-icon">
-                            <i
-                              class="fa fa fa-map-marker"
-                              aria-hidden="true"
-                            ></i>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
                           </span>
-                          15 rue des cygnes, 74940 Annecy, France
+                          Annecy, France
                         </li>
                       </ul>
+
+                      <div style="width: 100%; height: 300px">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          frameborder="0"
+                          scrolling="no"
+                          marginheight="0"
+                          marginwidth="0"
+                          src="https://www.openstreetmap.org/export/embed.html?bbox=6.0900%2C45.8890%2C6.1490%2C45.9250&amp;layer=mapnik&amp;marker=45.8992,6.1294"
+                        >
+                        </iframe>
+                      </div>
+
                       <h3>Suivez-moi sur les réseaux sociaux</h3>
                       <a
                         href="https://www.linkedin.com/in/robin-roger-99905625a"
-                        title=""
+                        title="LinkedIn"
                         class="fa-icon"
                       >
                         <i class="fa fa-linkedin"></i>
